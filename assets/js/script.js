@@ -166,3 +166,22 @@ function placeBoat(player, boat) {
         });
     }
 }
+
+// Effects
+function higlightPlacement() {
+    if (this.className === "cell") {
+        this.classList.add("highlight-cell");
+    } else if (this.classList.contains("fog")) {
+        this.classList.remove("fog");
+        this.classList.add("highlight-fog");
+    }
+}
+
+function normal() {
+    if (this.classList.contains("highlight-cell")) {
+        this.classList.remove("highlight-cell");
+    } else if (this.classList.contains("highlight-fog")) {
+        this.classList.remove("highlight-fog");
+        this.classList.add("fog");
+    }
+}
