@@ -271,6 +271,16 @@ function checkPlacement(player) {
     }
 }
 
+function confirmBoat(player, boat) {
+    for (let x = 0; x < 100; x++) {
+        if (document.getElementById(x).className === "cell boat") {
+            document.getElementById(x).classList.add("confirmed");
+        }
+    }
+    alert("Boat confirmed");
+    placeBoat(player, boat);
+}
+
 // Effects
 function higlightPlacement() {
     if (this.className === "cell") {
