@@ -63,11 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("game-container").innerHTML =
         `<button id="play">Play</button>`;
     document.getElementById("play").addEventListener("click", function () {
-        document.getElementById("play").removeEventListener("click", function () {
-            createMap();
-            fogMap(0);
-            buildPhase();
-        });
         createMap();
         fogMap(0);
         buildPhase();
@@ -137,5 +132,37 @@ function clickPlaceBoat() {
     }
     if (player2Ready === true) {
         document.getElementById("player2").classList.add("player-ready");
+    }
+}
+
+function placeBoat(player, boat) {
+    counterplaceBoat++;
+    if (boat === 3) {
+        if (player === 1) {
+            player1Ready = true;
+        } else if (player === 2) {
+            player2Ready = true;
+        }
+        buildPhase();
+    } else {
+        //create contents of page    
+        document.getElementById("menu").innerHTML = `<h2>Player ${player}, place boat ${boat}</h2><button id="ok">OK</button>`;
+        //boat placement
+        //    buildPhaseEventListener();
+        let correct = 0;
+        document.getElementById("ok").addEventListener("click", function () {
+            document.getElementById("ok").removeEventListener("click", function () {
+                correct = parseInt(checkPlacement(player));
+                if (correct === 1) {
+                    boat++;
+                    confirmBoat(player, boat);
+                }
+            });
+            correct = parseInt(checkPlacement(player));
+            if (correct === 1) {
+                boat++;
+                confirmBoat(player, boat);
+            }
+        });
     }
 }
