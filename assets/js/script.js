@@ -167,6 +167,110 @@ function placeBoat(player, boat) {
     }
 }
 
+function checkPlacement(player) {
+    if (player === 1) {
+        alert("Boat placed");
+        let correct = 0;
+        let boatCounter = 0;
+        let x = 0;
+        rowLoop:
+            while (x < 50) {
+                let boatInRow = 0;
+                let y = 0;
+                while (y < 10) {
+                    if (document.getElementById(x + y).className === "cell boat") {
+                        boatInRow++;
+                    }
+                    y++;
+                }
+                if (boatInRow === 4) {
+                    correct = 1;
+                    break rowLoop;
+                }
+                x += 10;
+            }
+        let y = 0;
+        rowColumn:
+            while (y < 10) {
+                let boatInColumn = 0;
+                let x = 0;
+                while (x < 50) {
+                    if (document.getElementById(x + y).className === "cell boat") {
+                        boatInColumn++;
+                    }
+                    x += 10;
+                }
+                if (boatInColumn === 4) {
+                    correct = 1;
+                    break rowColumn;
+                }
+                y++;
+            }
+        for (let x = 0; x < 50; x++) {
+            if (document.getElementById(x).className === "cell boat") {
+                boatCounter++;
+            }
+        }
+        if (boatCounter != 4) {
+            correct = 0
+        }
+        if (correct === 0) {
+            alert("wrong placement, please try again");
+        }
+        return [correct];
+    } else if (player === 2) {
+        alert("Boat placed");
+        let correct = 0;
+        let boatCounter = 0;
+        let x = 50;
+        rowLoop:
+            while (x < 100) {
+                let boatInRow = 0;
+                let y = 0;
+                while (y < 10) {
+                    if (document.getElementById(x + y).className === "cell boat") {
+                        boatInRow++;
+                    }
+                    y++;
+                }
+                if (boatInRow === 4) {
+                    correct = 1;
+                    break rowLoop;
+                }
+                x += 10;
+            }
+        let y = 0;
+        rowColumn:
+            while (y < 10) {
+                let boatInColumn = 0;
+                let x = 50;
+                while (x < 100) {
+                    if (document.getElementById(x + y).className === "cell boat") {
+                        boatInColumn++;
+                    }
+                    x += 10;
+                }
+                if (boatInColumn === 4) {
+                    correct = 1;
+                    break rowColumn;
+                }
+                y++;
+            }
+        for (let x = 50; x < 100; x++) {
+            if (document.getElementById(x).className === "cell boat") {
+                boatCounter++;
+            }
+        }
+        if (boatCounter != 4) {
+            correct = 0
+        }
+        if (correct === 0) {
+            alert("wrong placement, please try again");
+        }
+        return [correct];
+    }
+}
+
 // Effects
 function higlightPlacement() {
     if (this.className === "cell") {
