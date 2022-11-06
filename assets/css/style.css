@@ -35,3 +35,15 @@ button {
     width: 8vw;
     height: 8vh;
 }
+
+.boat {
+    background-color: #373737;
+}
+
+.confirmed {
+    background-color: black;
+}
+
+.fog {
+    background-color: darkblue;
+}
