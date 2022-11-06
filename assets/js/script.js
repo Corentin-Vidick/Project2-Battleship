@@ -13,3 +13,22 @@ counterbuildPhase = 0;
 document.addEventListener("DOMContentLoaded", function () {
     playGame();
 })
+
+
+/**
+ * Menu page
+ */
+ function playGame() {
+    document.getElementById("game-container").innerHTML =
+        `<button id="play">Play</button>`;
+    document.getElementById("play").addEventListener("click", function () {
+        document.getElementById("play").removeEventListener("click", function () {
+            createMap();
+            fogMap(0);
+            buildPhase();
+        });
+        createMap();
+        fogMap(0);
+        buildPhase();
+    });
+}
