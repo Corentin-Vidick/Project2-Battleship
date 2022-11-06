@@ -73,3 +73,44 @@ document.addEventListener("DOMContentLoaded", function () {
         buildPhase();
     });
 }
+
+
+/**
+ * Select player to place boats or ready to go to next phase
+ */
+ function buildPhase() {
+    counterbuildPhase++;
+    fogMap(0);
+    document.getElementById("menu").innerHTML =
+        `<button id="player1">Player 1</button>
+        <button id="player2">Player 2</button>
+        <button id="ready">Ready</button>`;
+    let buttons = document.getElementsByTagName("button");
+    for (let button of buttons) {
+        button.addEventListener("click", function () {
+            if (this.id === "player1") {
+                if (!player1Ready) {
+                    fogMap(1);
+                    buildPhaseEventListener();
+                    placeBoat(1, 1);
+                }
+            } else if (this.id === "player2") {
+                if (!player2Ready) {
+                    fogMap(2);
+                    buildPhaseEventListener();
+                    placeBoat(2, 1);
+                }
+            } else if (this.id === "ready") {
+                removeBuildPhaseEventListener();
+                fogMap(0);
+                battlePhase(1);
+            }
+        })
+    }
+    if (player1Ready === true) {
+        document.getElementById("player1").classList.add("player-ready");
+    }
+    if (player2Ready === true) {
+        document.getElementById("player2").classList.add("player-ready");
+    }
+}
