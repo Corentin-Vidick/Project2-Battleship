@@ -28,6 +28,35 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 /**
+ * Add fog to map
+ * player = 1 => fog bottom half
+ * player = 2 => fog top half
+ * player = 0 => fog all
+ */
+ function fogMap(player) {
+    if (player === 1) {
+        for (let x = 50; x <= 99; x++) {
+            document.getElementById(x).classList.add("fog"); // fogs player 2's half of map
+        }
+        for (let x = 0; x <= 49; x++) {
+            document.getElementById(x).classList.remove("fog"); // remove fog player 1's half of map
+        }
+    } else if (player === 2) {
+        for (let x = 0; x <= 49; x++) {
+            document.getElementById(x).classList.add("fog"); // fogs player 1's half of map
+        }
+        for (let x = 50; x <= 99; x++) {
+            document.getElementById(x).classList.remove("fog"); // remove fog player 2's half of map
+        }
+    } else if (player === 0) {
+        let cells = document.querySelectorAll(".cell"); //Tim's code - use of =>
+        cells.forEach(cell => { //Tim's code - use of =>
+            cell.classList.add("fog");
+        });
+    }
+}
+
+/**
  * Menu page
  */
  function playGame() {
