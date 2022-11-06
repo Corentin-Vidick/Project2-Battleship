@@ -74,6 +74,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 }
 
+function buildPhaseEventListener() {
+    let cells = document.getElementsByClassName("cell");
+    for (let cell of cells) {
+        cell.addEventListener("mouseover", higlightPlacement);
+        cell.addEventListener("mouseout", normal);
+        cell.addEventListener("click", clickPlaceBoat);
+    }
+}
+
+function removeBuildPhaseEventListener() {
+    let cells = document.getElementsByClassName("cell");
+    for (let cell of cells) {
+        cell.removeEventListener("mouseover", higlightPlacement);
+        cell.removeEventListener("mouseout", normal);
+        cell.removeEventListener("click", clickPlaceBoat);
+    }
+}
+
+function clickPlaceBoat() {
+    if (this.className === "cell boat") {
+        this.classList.remove("boat");
+    } else if (this.className === "cell highlight-cell") {
+        this.classList.add("boat");
+    }
+}
 
 /**
  * Select player to place boats or ready to go to next phase
