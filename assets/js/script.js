@@ -89,6 +89,38 @@ function normal() {
     }
 }
 
+// Player messages - modal
+function playerMessage(key) {
+    let text = "";
+    if (key === 0) {
+        text = "Boat placed"
+    } else if (key === 1) {
+        text = "Wrong placement"
+    } else if (key === 2) {
+        text = "Please place all boats before continuing"
+    } else if (key === 3) {
+        text = "Too many shots fired"
+    } else if (key === 4) {
+        text = "You already shot this cell"
+    } else if (key === 5) {
+        text = "Boat hit"
+    } else if (key === 6) {
+        text = "Miss"
+    } else if (key === 7) {
+        text = "Player 2 wins!!!"
+    } else if (key === 8) {
+        text = "Player 1 wins!!!"
+    }
+    document.getElementById("modal-text").innerHTML = text;
+    let modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+    }
+}
+
 // Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function () {
     playGame();
@@ -233,7 +265,7 @@ function placeBoat(player, boat) {
                 boat++;
                 confirmBoat(player, boat);
             } else if (correct === 0) {
-                alert("wrong placement, please try again");
+                playerMessage(1);
                 placeBoat(player, boat);
             }
         });
@@ -333,7 +365,7 @@ function confirmBoat(player, boat) {
             document.getElementById(x).classList.add("confirmed");
         }
     }
-    alert("Boat confirmed");
+    playerMessage(0);
     placeBoat(player, boat);
 }
 
@@ -342,7 +374,7 @@ function confirmBoat(player, boat) {
  */
 function battlePhase(player) {
     if (!player1Ready || !player2Ready) {
-        alert("place boats for all players");
+        playerMessage(2);
         buildPhase();
     } else if (player1Life === 0 || player2Life === 0) {
         gameOver();
@@ -358,7 +390,6 @@ function battlePhase(player) {
                 }
             });
             if (this.id === "player" + player) {
-
                 playerShoot(player);
             }
         });
@@ -383,10 +414,10 @@ function playerShoot(player) {
             player1Life--;
             confirmShot(player);
         } else if (hit === 2) {
-            alert("Too many shots fired!");
+            playerMessage(3);
             playerShoot(player);
         } else if (hit === 3) {
-            alert("You already shot this cell!");
+            playerMessage(4);
             playerShoot(player);
         } else {
             confirmShot(player);
@@ -427,11 +458,11 @@ function confirmShot(player) {
         if (document.getElementById(x).classList.contains("target") && document.getElementById(x).classList.contains("boat")) {
             document.getElementById(x).className = "cell boat-hit";
             document.getElementById(x).innerHTML = "";
-            alert("boat hit");
+            playerMessage(5);
         } else if (document.getElementById(x).classList.contains("target")) {
             document.getElementById(x).className = "cell miss";
             document.getElementById(x).innerHTML = "";
-            alert("miss");
+            playerMessage(6);
         }
     }
     if (player === 1) {
@@ -447,9 +478,9 @@ function confirmShot(player) {
  */
 function gameOver() {
     if (player1Life === 0) {
-        alert("Player 2 wins!");
+        playerMessage(7);
     } else if (player2Life === 0) {
-        alert("Player 1 wins!");
+        playerMessage(8);
     }
     playGame();
 }
