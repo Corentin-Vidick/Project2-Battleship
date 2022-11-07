@@ -1,6 +1,12 @@
 # Battleship
 
 The battleship website is intended to showcase JavaScript through the classic game of battleships. It is a two-player game. Each player places two boats on their half of the “map”. Once boats are placed, the players take turns at shooting blindly trying to hit the other player’s boats. The game ends when all of a player’s boats are destroyed.
+
+### Important information
+
+- This project was started on October the 13th 2022 in the [GitHub repository](https://github.com/Corentin-Vidick/bataille-navale). All code was developed by myself from scratch, but I realised commits were not up to standard. I decided to create a new repository using the same code in order for my commits to meet requirements. All commits very recent for that reason.
+
+
 ### Existing Features
 
 - __The title, tab name and icon__
@@ -33,7 +39,7 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 - __Battle phase page__
 
--	Lets each player shoot one by one. Notifies which player is going to shoot before revealing corresponding map.
+-	Lets each player shoot one by one. Notifies which player is going to shoot before revealing corresponding map. Turns alternate until one player destroys all opponent's boats. Winner is displayed and game returns to first page.
 
 - __Shooting page__
 
