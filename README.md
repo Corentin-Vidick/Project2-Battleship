@@ -27,23 +27,35 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 - __Menu page__
 
--	Displays rules of game and lets players decide when to start a new game
+-	Displays rules of game and lets players decide when to start a new game.
+
+![Menu](/documentation/menu-page.jpg)
 
 - __General boat placement page__
 
 -	Gives each player the option to place their boats. Buttons change colour once boats are placed. One button to move onto next phase, only activates if both players have placed their boats correctly.
 
+![General boat placement](/documentation/all-boats-placed.jpg)
+
 - __Player boat placement page__
 
 -	Indicates which boat the player is placing, checks and confirms or denies the boat placement. If placement is wrong, player can try again until correct. Once both boats are placed and accepted, goes back to General boat placement page.
+
+![Player boat placement](/documentation/all-boats-placed.jpg)
 
 - __Battle phase page__
 
 -	Lets each player shoot one by one. Notifies which player is going to shoot before revealing corresponding map. Turns alternate until one player destroys all opponent's boats. Winner is displayed and game returns to first page.
 
+![Battle phase](/documentation/shooting-phase-in-between-players.jpg)
+
 - __Shooting page__
 
 -	Player can see their own half of map and select one cell on other player's half to shoot. Informs player of hit or miss and switches to next player's battle phase page.
+
+![Cell higlight](/documentation/shooting-phase-cell-highlight.jpg)
+
+![Cell selected](/documentation/shooting-phase-cell-selected.jpg)
 
 - __End of game__
 
