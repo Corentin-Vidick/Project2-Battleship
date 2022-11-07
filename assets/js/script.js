@@ -281,6 +281,56 @@ function confirmBoat(player, boat) {
     placeBoat(player, boat);
 }
 
+//Battle phase
+
+function battlePhaseEventListener() {
+    let cells = document.getElementsByClassName("cell");
+    alert("listening for click on cell shootmode");
+    for (let cell of cells) {
+        cell.addEventListener("mouseover", higlightPlacement);
+        cell.addEventListener("mouseout", normal);
+        cell.addEventListener("click", clickPlaceShot);
+    }
+}
+
+function removeBattlePhaseEventListener() {
+    let cells = document.getElementsByClassName("cell");
+    alert("remove listen for click on cell shootmode");
+    for (let cell of cells) {
+        cell.removeEventListener("mouseover", higlightPlacement);
+        cell.removeEventListener("mouseout", normal);
+        cell.removeEventListener("click", clickPlaceShot);
+    }
+}
+
+function clickPlaceShot() {
+    if (this.classList.contains("target")) {
+        this.classList.remove("target");
+    } else if (this.classList.contains("highlight-fog")) {
+        this.classList.remove("fog");
+        this.classList.add("target");
+    }
+}
+
+function battlePhase(player) {
+    if (!player1Ready || !player2Ready) {
+        alert("place boats for all players");
+        buildPhase();
+    } else if (player1Life === 0 || player2Life === 0) {
+        gameOver();
+    } else {
+        fogMap(0);
+        removeBattlePhaseEventListener();
+        document.getElementById("menu").innerHTML = `<button id="player${player}">Player ${player} ready?</button>`;
+        let buttons = document.getElementById("player" + player);
+        buttons.addEventListener("click", function () {
+            if (this.id === "player" + player) {
+                playerShoot(player)
+            }
+        });
+    }
+}
+
 // Effects
 function higlightPlacement() {
     if (this.className === "cell") {
