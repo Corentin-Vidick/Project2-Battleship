@@ -45,9 +45,12 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 -	Player can see their own half of map and select one cell on other player's half to shoot. Informs player of hit or miss and switches to next player's battle phase page.
 
+- __End of game__
+
+-	Once one player's boats are destroyed, the winner is announced and game goes back to main page.
+
 ### Features Left to Implement
 
-  -  Shooting phase of game.
   -  Use modals instead of alerts to make experience more user friendly.
   -  Possibility to play against computer. Random boat placement and shot selection. 
   -  Differentiate boats to notify player if boat hit and/or full boat destroyed.
