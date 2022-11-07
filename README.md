@@ -23,7 +23,7 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 - __Alerts__
 
--	Alerts are used to inform player about placement errors, results of shooting and who wins at the end of the game.
+-	Modals are used to inform player about placement errors, results of shooting and who wins at the end of the game.
 
 - __Menu page__
 
