@@ -93,23 +93,23 @@ function normal() {
 function playerMessage(key) {
     let text = "";
     if (key === 0) {
-        text = "Boat placed"
+        text = "Boat placed";
     } else if (key === 1) {
-        text = "Wrong placement"
+        text = "Wrong placement";
     } else if (key === 2) {
-        text = "Please place all boats before continuing"
+        text = "Please place all boats before continuing";
     } else if (key === 3) {
-        text = "Too many shots fired"
+        text = "Too many shots fired";
     } else if (key === 4) {
-        text = "You already shot this cell"
+        text = "You already shot this cell";
     } else if (key === 5) {
-        text = "Boat hit"
+        text = "Boat hit";
     } else if (key === 6) {
-        text = "Miss"
+        text = "Miss";
     } else if (key === 7) {
-        text = "Player 2 wins!!!"
+        text = "Player 2 wins!!!";
     } else if (key === 8) {
-        text = "Player 1 wins!!!"
+        text = "Player 1 wins!!!";
     }
     document.getElementById("modal-text").innerHTML = text;
     let modal = document.getElementById("myModal");
@@ -118,7 +118,7 @@ function playerMessage(key) {
         if (event.target == modal) {
           modal.style.display = "none";
         }
-    }
+    };
 }
 
 // Wait for the DOM to finish loading before running the game
@@ -199,6 +199,25 @@ function playGame() {
     });
 }
 
+function buildButtons() {
+    if (this.id === "player1") {
+        if (!player1Ready) {
+            fogMap(1);
+            buildPhaseEventListener();
+            placeBoat(1, 1);
+        }
+    } else if (this.id === "player2") {
+        if (!player2Ready) {
+            fogMap(2);
+            buildPhaseEventListener();
+            placeBoat(2, 1);
+        }
+    } else if (this.id === "ready") {
+        removeBuildPhaseEventListener();
+        fogMap(0);
+        battlePhase(1);
+    }
+}
 
 /**
  * Select player to place boats or ready to go to next phase
@@ -213,25 +232,7 @@ function buildPhase() {
     // Listens for button click
     let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
-        button.addEventListener("click", function () {
-            if (this.id === "player1") {
-                if (!player1Ready) {
-                    fogMap(1);
-                    buildPhaseEventListener();
-                    placeBoat(1, 1);
-                }
-            } else if (this.id === "player2") {
-                if (!player2Ready) {
-                    fogMap(2);
-                    buildPhaseEventListener();
-                    placeBoat(2, 1);
-                }
-            } else if (this.id === "ready") {
-                removeBuildPhaseEventListener();
-                fogMap(0);
-                battlePhase(1);
-            }
-        });
+        button.addEventListener("click", buildButtons);
     }
     // Change button color when boat placement complete
     if (player1Ready === true) {
