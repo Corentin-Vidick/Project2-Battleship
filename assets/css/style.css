@@ -1,14 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono&display=swap');
+
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
     border: none;
     box-sizing: border-box;
+    background-color: rgb(208, 208, 208);
+    font-family: 'Roboto Mono', monospace;
 }
 
-#menu {
-    width: 100%;
-    background-color: lightcoral;
-    height: 75px;
+/* Title */
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Bebas Neue', cursive;
 }
 
 button {
