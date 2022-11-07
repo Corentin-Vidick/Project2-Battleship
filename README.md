@@ -31,6 +31,13 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 -	Indicates which boat the player is placing, checks and confirms or denies the boat placement. If placement is wrong, player can try again until correct. Once both boats are placed and accepted, goes back to General boat placement page.
 
+- __Battle phase page__
+
+-	Lets each player shoot one by one. Notifies which player is going to shoot before revealing corresponding map.
+
+- __Shooting page__
+
+-	Player can see their own half of map and select one cell on other player's half to shoot. Informs player of hit or miss and switches to next player's battle phase page.
 
 ### Features Left to Implement
 
