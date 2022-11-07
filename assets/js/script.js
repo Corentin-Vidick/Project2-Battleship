@@ -1,12 +1,13 @@
 /* jshint esversion: 11 */ //starts EVERY javascript file for checker
 
+// Initial state of game
 let player1Ready = false;
 let player2Ready = false;
-let player1Life = 8;
-let player2Life = 8;
 
-counterplaceBoat = 0;
-counterbuildPhase = 0;
+// Set boat length & relative life
+let boatLength = 2;
+let player1Life = boatLength * 2;
+let player2Life = boatLength * 2;
 
 
 // Wait for the DOM to finish loading before running the game
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
  * Creates contents of game-area
  */
  function createMap() {
+    document.getElementById("rule-container").id = "game-container";
     document.getElementById("game-container").innerHTML = "";
     for (let x = 0; x < 100; x++) {
         let cell = document.createElement("div");
@@ -60,8 +62,22 @@ document.addEventListener("DOMContentLoaded", function () {
  * Menu page
  */
  function playGame() {
-    document.getElementById("game-container").innerHTML =
-        `<button id="play">Play</button>`;
+    // Reset variables for new game
+    player1Ready = false;
+    player2Ready = false;
+    player1Life = boatLength * 2;
+    player2Life = boatLength * 2;
+    // Create page contents
+    document.getElementById("menu").innerHTML =`<button id="play">Play</button>`;
+    document.getElementById("game-container").id = "rule-container";
+    document.getElementById("rule-container").innerHTML = `
+        <h2>Rules:</h2> 
+        <div>This is a turn based game</div>  
+        <div>Each player places two boats</div>
+        <div>Each boat is ${boatLength} tiles long</div>
+        <div>The first player to destroy all adversaries' boats wins</div>
+        <div>May the best player win!</div>`        
+    // Listen for click
     document.getElementById("play").addEventListener("click", function () {
         createMap();
         fogMap(0);
@@ -99,7 +115,6 @@ function clickPlaceBoat() {
  * Select player to place boats or ready to go to next phase
  */
  function buildPhase() {
-    counterbuildPhase++;
     fogMap(0);
     document.getElementById("menu").innerHTML =
         `<button id="player1">Player 1</button>
@@ -136,7 +151,6 @@ function clickPlaceBoat() {
 }
 
 function placeBoat(player, boat) {
-    counterplaceBoat++;
     if (boat === 3) {
         if (player === 1) {
             player1Ready = true;
