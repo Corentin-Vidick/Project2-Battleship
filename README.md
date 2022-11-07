@@ -55,7 +55,7 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 -	Indicates which boat the player is placing, checks and confirms or denies the boat placement. If placement is wrong, player can try again until correct. Once both boats are placed and accepted, goes back to General boat placement page.
 
-![Player boat placement](/documentation/all-boats-placed.jpg)
+![Player boat placement](/documentation/boat-placement-page.jpg)
 
 - __Battle phase page__
 
@@ -79,6 +79,64 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 ## Testing
 
+### Features
+
+  - Buttons: created and activated through JavaScript, colour change to indicate accessibility.
+
+  - Responsiveness: Game grid and content adapts to screen size to maintain ratios.
+
+  ![Responsiveness](/documentation/responsiveness.jpg)
+
+  - Use of Grid to improve adaptability and html generation through JavaScript
+  ```css
+  #game-container {
+    margin: auto;
+    display: grid;
+    background-color: lightblue;
+    padding: 20px;
+    gap: 5px;
+    width: 81vmin;
+    height: 81vmin;
+    grid-template-columns: repeat(10, minmax(20px, 1fr));
+    grid-template-rows: repeat(10, minmax(20px, 1fr));
+  }
+
+  #middle-line {
+      height: 5px;
+      background-color: red;
+      width: 81vmin;
+      margin: auto;
+      position: relative;
+      bottom: 40.85vmin;
+  }
+  ```
+
+  - Use of Modals to improve UX
+  ```css
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 50vmin; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: white;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    height: 20%;
+    font-size: 2rem;
+  }
+  ```
+
 ### Validation
 
   - HTML
@@ -91,7 +149,7 @@ The battleship website is intended to showcase JavaScript through the classic ga
     - No errors were found when passing through the official ![JSHint validator](/documentation/validation-javascript.jpg)
 
   - Lighthouse
-    
+
 ### Features Left to Implement
 
   -  Possibility to play against computer. Random boat placement and shot selection. 
