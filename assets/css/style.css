@@ -41,6 +41,20 @@ button {
     background-color: red;
 }
 
+/* Start page */
+#rule-container {
+    margin: auto;
+    width: 81vmin;
+    height: 81vmin;
+    background-color: lightblue;
+}
+
+#rule-container * {
+    padding: 10px;
+    text-align: center;  
+    background-color: lightblue;
+}
+
 #game-container {
     display: grid;
     background-color: lightblue;
