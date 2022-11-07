@@ -73,8 +73,25 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 - __End of game__
 
--	Once one player's boats are destroyed, the winner is announced and game goes back to main page.
+  -	Once one player's boats are destroyed, the winner is announced and game goes back to main page.
 
+![End game](/documentation/modal-player1-wins.jpg)
+
+## Testing
+
+### Validation
+
+  - HTML
+    - No errors were returned when passing through the official ![W3C validator Main](/documentation/validation-html.jpg)
+
+  - CSS
+    - No errors were found when passing through the official ![Jigsaw validator](/documentation/validation-css.jpg)
+
+  - Javascript
+    - No errors were found when passing through the official ![JSHint validator](/documentation/validation-javascript.jpg)
+
+  - Lighthouse
+    
 ### Features Left to Implement
 
   -  Possibility to play against computer. Random boat placement and shot selection. 
