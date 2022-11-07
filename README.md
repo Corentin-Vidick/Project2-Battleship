@@ -82,7 +82,10 @@ The battleship website is intended to showcase JavaScript through the classic ga
   -  Improve UI to display shots taken, boats damaged/remaining…
   -  Improve boat graphics.
 
+### Unfixed bugs
 
+  -  Bugs and issues logged in GitHub issues - all issues fixed during build.
+  -  For screen sizes smaller than 320px the game container size fails due to padding.
 
 
 ## Deployment
