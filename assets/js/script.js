@@ -332,23 +332,45 @@ function battlePhase(player) {
         hit = parseInt(checkHit());
         if (hit === 1 && player === 1) {
             player1Life--;
+            confirmShot(player);
         } else if (hit === 1 && player === 2) {
             player2Life--;
-        }
+            confirmShot(player);
+        } else if (hit === 2) {
+            alert("Too many shots fired!");
+            playerShoot(player);
+        } else if (hit === 3)  {
+            alert("You already shot this cell!");
+            playerShoot(player);
+        } else {
         confirmShot(player);
+        }
     });
 }
 
 /**
  * Returns 1 if boat hit for playerLife count
+ * Returns 2 if more than one shot taken
+ * Returns 3 if selecting pre-shot cell
  */
  function checkHit() {
-    alert("Checking if shot hit...");
     let hit = 0;
+    let count = 0;
     for (let x = 0; x < 100; x++) {
+        if (document.getElementById(x).classList.contains("target")) {
+            count++;
+        }
         if (document.getElementById(x).classList.contains("target") && document.getElementById(x).classList.contains("boat")) {
             hit = 1;
         }
+        if (document.getElementById(x).classList.contains("target") 
+            && (document.getElementById(x).classList.contains("boat-hit") 
+            || document.getElementById(x).classList.contains("miss"))) {
+                hit = 3;
+            }
+    }
+    if (count != 1) {
+        hit = 2;
     }
     return hit;
 }
