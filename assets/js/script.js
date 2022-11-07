@@ -384,6 +384,14 @@ function battlePhase(player) {
     battlePhase(player);
 }
 
+function gameOver() {
+    if (player1Life === 0) {
+        alert("Player 2 wins!");
+    } else if (player2Life === 0) {
+        alert("Player 1 wins!");
+    }
+    playGame();
+}
 
 // Effects
 function higlightPlacement() {
