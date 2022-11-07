@@ -149,6 +149,7 @@ The battleship website is intended to showcase JavaScript through the classic ga
     - No errors were found when passing through the official ![JSHint validator](/documentation/validation-javascript.jpg)
 
   - Lighthouse
+    - All Lighthouse tests > 90% ![Lighthouse](/documentation/validation-lighthouse.jpg)
 
 ### Features Left to Implement
 
