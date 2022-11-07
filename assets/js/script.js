@@ -482,5 +482,6 @@ function gameOver() {
     } else if (player2Life === 0) {
         playerMessage(8);
     }
+    document.getElementById("middle-line").remove();
     playGame();
 }
