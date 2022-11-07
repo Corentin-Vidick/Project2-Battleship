@@ -162,7 +162,6 @@ function placeBoat(player, boat) {
         //create contents of page    
         document.getElementById("menu").innerHTML = `<h2>Player ${player}, place boat ${boat}</h2><button id="ok">OK</button>`;
         //boat placement
-        //    buildPhaseEventListener();
         let correct = 0;
         document.getElementById("ok").addEventListener("click", function () {
             document.getElementById("ok").removeEventListener("click", function () {
@@ -182,107 +181,84 @@ function placeBoat(player, boat) {
 }
 
 function checkPlacement(player) {
+    let x;              // Variable depends on player, used to scan through grid
+    let maxX;           // Variable depends on player, used to scan through grid
+    let correct = 0;
+    // Check if boat is placed in row
+    let boatSolid = 0;
     if (player === 1) {
-        alert("Boat placed");
-        let correct = 0;
-        let boatCounter = 0;
-        let x = 0;
-        rowLoop:
-            while (x < 50) {
-                let boatInRow = 0;
-                let y = 0;
-                while (y < 10) {
-                    if (document.getElementById(x + y).className === "cell boat") {
-                        boatInRow++;
-                    }
-                    y++;
-                }
-                if (boatInRow === 4) {
-                    correct = 1;
-                    break rowLoop;
-                }
-                x += 10;
-            }
-        let y = 0;
-        rowColumn:
-            while (y < 10) {
-                let boatInColumn = 0;
-                let x = 0;
-                while (x < 50) {
-                    if (document.getElementById(x + y).className === "cell boat") {
-                        boatInColumn++;
-                    }
-                    x += 10;
-                }
-                if (boatInColumn === 4) {
-                    correct = 1;
-                    break rowColumn;
-                }
-                y++;
-            }
-        for (let x = 0; x < 50; x++) {
-            if (document.getElementById(x).className === "cell boat") {
-                boatCounter++;
-            }
-        }
-        if (boatCounter != 4) {
-            correct = 0
-        }
-        if (correct === 0) {
-            alert("wrong placement, please try again");
-        }
-        return [correct];
+        x = 0;
+        maxX = 50;
     } else if (player === 2) {
-        alert("Boat placed");
-        let correct = 0;
-        let boatCounter = 0;
-        let x = 50;
-        rowLoop:
-            while (x < 100) {
-                let boatInRow = 0;
-                let y = 0;
-                while (y < 10) {
-                    if (document.getElementById(x + y).className === "cell boat") {
-                        boatInRow++;
-                    }
-                    y++;
-                }
-                if (boatInRow === 4) {
-                    correct = 1;
-                    break rowLoop;
-                }
-                x += 10;
-            }
-        let y = 0;
-        rowColumn:
+        x = 50;
+        maxX = 100;
+    }
+    rowLoop:
+        while (x < maxX) {
+            let boatInRow = 0;
+            let y = 0;
             while (y < 10) {
-                let boatInColumn = 0;
-                let x = 50;
-                while (x < 100) {
-                    if (document.getElementById(x + y).className === "cell boat") {
-                        boatInColumn++;
+                if (document.getElementById(x + y).className === "cell boat") {
+                    boatInRow++;
+                    if (boatInRow > 1) {
+                        if (boatSolid + 1 != (x + y)) {
+                            correct = 0;
+                            break rowLoop;
+                        }
                     }
-                    x += 10;
-                }
-                if (boatInColumn === 4) {
-                    correct = 1;
-                    break rowColumn;
+                    boatSolid = x + y;
                 }
                 y++;
             }
-        for (let x = 50; x < 100; x++) {
-            if (document.getElementById(x).className === "cell boat") {
-                boatCounter++;
+            if (boatInRow === boatLength) {
+                correct = 1;
+                break rowLoop;
             }
+            x += 10;
         }
-        if (boatCounter != 4) {
-            correct = 0
+    // Check if boat is placed in column
+    boatSolid = 0;
+    let y = 0;
+    columnLoop:
+        while (y < 10) {
+            let boatInColumn = 0;
+            if (player === 1) {
+                x = 0;
+                maxX = 50;
+            } else if (player === 2) {
+                x = 50;
+                maxX = 100;
+            }
+            while (x < maxX) {
+                if (document.getElementById(x + y).className === "cell boat") {
+                    boatInColumn++;
+                    if (boatInColumn > 1) {
+                        if (boatSolid + 10 != (x + y)) {
+                            correct = 0;
+                            break columnLoop;
+                        }
+                    }
+                    boatSolid = x + y;
+                }
+                x += 10;
+            }
+            if (boatInColumn === boatLength) {
+                correct = 1;
+                break columnLoop;
+            }
+            y++;
         }
-        if (correct === 0) {
-            alert("wrong placement, please try again");
+    // Check if correct number of cells selected
+    let boatCounter = 0;
+    for (x = 0 ; x < 100 ; x++) {
+        if (document.getElementById(x).className === "cell boat") {
+            boatCounter++;
         }
-        return [correct];
     }
+    if (boatCounter != boatLength) {
+        correct = 0;
+    }
+    return [correct];
 }
 
 function confirmBoat(player, boat) {
