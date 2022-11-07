@@ -285,7 +285,6 @@ function confirmBoat(player, boat) {
 
 function battlePhaseEventListener() {
     let cells = document.getElementsByClassName("cell");
-    alert("listening for click on cell shootmode");
     for (let cell of cells) {
         cell.addEventListener("mouseover", higlightPlacement);
         cell.addEventListener("mouseout", normal);
@@ -295,7 +294,6 @@ function battlePhaseEventListener() {
 
 function removeBattlePhaseEventListener() {
     let cells = document.getElementsByClassName("cell");
-    alert("remove listen for click on cell shootmode");
     for (let cell of cells) {
         cell.removeEventListener("mouseover", higlightPlacement);
         cell.removeEventListener("mouseout", normal);
@@ -330,6 +328,41 @@ function battlePhase(player) {
         });
     }
 }
+
+/**
+ * 1 -> player 1
+ * 2 -> player 2
+ */
+ function playerShoot(player) {
+    document.getElementById("menu").innerHTML = `<h2>Player ${player}, ready to shoot?</h2><button id="shoot">Shoot</button>`;
+    fogMap(player);
+    battlePhaseEventListener();
+    let hit = 0;
+    document.getElementById("shoot").addEventListener("click", function () {
+        hit = parseInt(checkHit());
+        if (hit === 1 && player === 1) {
+            player1Life--;
+        } else if (hit === 1 && player === 2) {
+            player2Life--;
+        }
+        confirmShot(player);
+    });
+}
+
+/**
+ * Returns 1 if boat hit for playerLife count
+ */
+ function checkHit() {
+    alert("Checking if shot hit...");
+    let hit = 0;
+    for (let x = 0; x < 100; x++) {
+        if (document.getElementById(x).classList.contains("target") && document.getElementById(x).classList.contains("boat")) {
+            hit = 1;
+        }
+    }
+    return hit;
+}
+
 
 // Effects
 function higlightPlacement() {
