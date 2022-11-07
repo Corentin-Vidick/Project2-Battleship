@@ -363,6 +363,27 @@ function battlePhase(player) {
     return hit;
 }
 
+/**
+ * Assigns correct class to cell dependent on result, switches player, goes back to battlePhase 
+ */
+ function confirmShot(player) {
+    for (let x = 0; x < 100; x++) {
+        if (document.getElementById(x).classList.contains("target") && document.getElementById(x).classList.contains("boat")) {
+            document.getElementById(x).className = "cell boat-hit";
+            alert("boat hit");
+        } else if (document.getElementById(x).classList.contains("target")) {
+            document.getElementById(x).className = "cell miss";
+            alert("miss");
+        }
+    }
+    if (player === 1) {
+        player = 2;
+    } else {
+        player = 1;
+    }
+    battlePhase(player);
+}
+
 
 // Effects
 function higlightPlacement() {
