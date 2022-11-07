@@ -25,6 +25,20 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 -	Modals are used to inform player about placement errors, results of shooting and who wins at the end of the game.
 
+![Modal - boat placed](/documentation/modal-boat-placed.jpg)
+
+![Modal - wrong placement](/documentation/modal-wrong-placement.jpg)
+
+![Modal - boat hit](/documentation/modal-boat-hit.jpg)
+
+![Modal - miss](/documentation/modal-miss.jpg)
+
+![Modal - too many shots fired](/documentation/modal-too-many-shots.jpg)
+
+![Modal - cell already shot](/documentation/modal-cell-already-shot.jpg)
+
+![Modal - Player 1 victory](/documentation/modal-player1-wins.jpg)
+
 - __Menu page__
 
 -	Displays rules of game and lets players decide when to start a new game.
@@ -63,7 +77,6 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 ### Features Left to Implement
 
-  -  Use modals instead of alerts to make experience more user friendly.
   -  Possibility to play against computer. Random boat placement and shot selection. 
   -  Differentiate boats to notify player if boat hit and/or full boat destroyed.
   -  Improve UI to display shots taken, boats damaged/remaining…
