@@ -181,25 +181,7 @@ function buildPhase() {
     // Listens for button click
     let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
-        button.addEventListener("click", function () {
-            if (this.id === "player1") {
-                if (!player1Ready) {
-                    fogMap(1);
-                    buildPhaseEventListener();
-                    placeBoat(1, 1);
-                }
-            } else if (this.id === "player2") {
-                if (!player2Ready) {
-                    fogMap(2);
-                    buildPhaseEventListener();
-                    placeBoat(2, 1);
-                }
-            } else if (this.id === "ready") {
-                removeBuildPhaseEventListener();
-                fogMap(0);
-                battlePhase(1);
-            }
-        });
+        button.addEventListener("click", playerSelect);
     }
     // Change button color when boat placement complete
     if (player1Ready === true) {
@@ -207,6 +189,26 @@ function buildPhase() {
     }
     if (player2Ready === true) {
         document.getElementById("player2").classList.add("player-ready");
+    }
+}
+
+function playerSelect() {
+    if (this.id === "player1") {
+        if (!player1Ready) {
+            fogMap(1);
+            buildPhaseEventListener();
+            placeBoat(1, 1);
+        }
+    } else if (this.id === "player2") {
+        if (!player2Ready) {
+            fogMap(2);
+            buildPhaseEventListener();
+            placeBoat(2, 1);
+        }
+    } else if (this.id === "ready") {
+        removeBuildPhaseEventListener();
+        fogMap(0);
+        battlePhase(1);
     }
 }
 

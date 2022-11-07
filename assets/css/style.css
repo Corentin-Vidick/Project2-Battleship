@@ -69,6 +69,12 @@ button {
 }
 
 
+/* Grid cell states */
+img {
+    max-width:100%;
+    max-height:100%;
+}
+
 .cell {
     background-color: blue;
 }
@@ -100,6 +106,8 @@ button {
 
 .highlight-cell {
     box-shadow: 5px 5px 5px #00aaff;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .highlight-fog {
