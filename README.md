@@ -235,4 +235,7 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 - Grid understanding done through [W3Schools](https://www.w3schools.com/css/css_grid.asp)
 - Switch case understanding through [W3Schools](https://www.w3schools.com/js/js_switch.asp)
 - Modal understanding through [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp)
-- All images and text are property of the developer, Corentin Vidick
+
+- Intelecutal property
+  - All images and text are property of the developer, Corentin Vidick
+  - GitPod repository can be found at [Repository](https://github.com/Corentin-Vidick/Project2-Battleship) solely developed by Corentin Vidick from 06/11/2022 based on [Initial repository](https://github.com/Corentin-Vidick/bataille-navale) solely developed by Corentin Vidick from 13/12/2022.
