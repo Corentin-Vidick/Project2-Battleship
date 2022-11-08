@@ -229,7 +229,7 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 - __Event listeners__
 
-  Issues encountered where event listeners where stacking and deploying at incorrect times.
+  Issues encountered where event listeners were stacking and deploying at incorrect times.
 ![Event listener 1](/documentation/stacking-event-listeners-screenshot.jpg)
 ![Event listener 2](/documentation/stacking-event-listeners-screenshot2.jpg)
 

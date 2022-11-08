@@ -125,9 +125,9 @@ function playerMessage(key) {
     document.getElementById("modal-text").innerHTML = text;
     let modal = document.getElementById("myModal");
     modal.style.display = "block";
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
-          modal.style.display = "none";
+            modal.style.display = "none";
         }
     };
 }
