@@ -77,6 +77,13 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 ![End game](/documentation/modal-player1-wins.jpg)
 
+### Features Left to Implement
+
+  -  Possibility to play against computer. Random boat placement and shot selection. 
+  -  Differentiate boats to notify player if boat hit and/or full boat destroyed.
+  -  Improve UI to display shots taken, boats damaged/remaining…
+  -  Improve boat graphics.
+
 ## Testing
 
 ### Features
@@ -151,13 +158,6 @@ The battleship website is intended to showcase JavaScript through the classic ga
   - Lighthouse
     - All Lighthouse tests > 90% ![Lighthouse](/documentation/validation-lighthouse.jpg)
 
-### Features Left to Implement
-
-  -  Possibility to play against computer. Random boat placement and shot selection. 
-  -  Differentiate boats to notify player if boat hit and/or full boat destroyed.
-  -  Improve UI to display shots taken, boats damaged/remaining…
-  -  Improve boat graphics.
-
 ### Unfixed bugs
 
   -  Bugs and issues logged in GitHub issues - all issues fixed during build.
@@ -171,17 +171,17 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
   - From the source section drop-down menu, select the **Main** Branch, then click "Save".
   - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-The live link can be found [here](https://corentin-vidick.github.io/ Project2-Battleship)
+The live link can be found [here](https://corentin-vidick.github.io/Project2-Battleship)
 
 ### Local Deployment
 
 In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone my repository:
 
-- `git clone https://github.com/Corentin-Vidick/ Project2-Battleship.git`
+- `git clone https://github.com/Corentin-Vidick/Project2-Battleship.git`
 
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Corentin-Vidick/ Project2-Battleship)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Corentin-Vidick/Project2-Battleship)
 
 
 ## Credits 

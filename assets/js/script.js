@@ -90,26 +90,37 @@ function normal() {
 }
 
 // Player messages - modal
+// Player messages - modal
 function playerMessage(key) {
     let text = "";
-    if (key === 0) {
-        text = "Boat placed";
-    } else if (key === 1) {
-        text = "Wrong placement";
-    } else if (key === 2) {
-        text = "Please place all boats before continuing";
-    } else if (key === 3) {
-        text = "Too many shots fired";
-    } else if (key === 4) {
-        text = "You already shot this cell";
-    } else if (key === 5) {
-        text = "Boat hit";
-    } else if (key === 6) {
-        text = "Miss";
-    } else if (key === 7) {
-        text = "Player 2 wins!!!";
-    } else if (key === 8) {
-        text = "Player 1 wins!!!";
+    switch (key) {
+        case 0:
+            text = "Boat placed";
+            break;
+        case 1:
+            text = "Wrong placement";
+            break;
+        case 2:
+            text = "Please place all boats before continuing";
+            break;
+        case 3:
+            text = "Too many shots fired";
+            break;
+        case 4:
+            text = "You already shot this cell";
+            break;
+        case 5:
+            text = "Boat hit";
+            break;
+        case 6:
+            text = "Miss";
+            break;
+        case 7:
+            text = "Player 2 wins!!!";
+            break;
+        case 8:
+            text = "Player 1 wins!!!";
+            break;
     }
     document.getElementById("modal-text").innerHTML = text;
     let modal = document.getElementById("myModal");
