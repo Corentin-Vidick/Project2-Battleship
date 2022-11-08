@@ -13,13 +13,30 @@ The battleship website is intended to showcase JavaScript through the classic ga
   
 -	Repeated on every page, helps locate the correct page if many are open.
 
+![Tab and title](/documentation/title-and-tab.jpg)
+
 - __Menu area__
 
 -	Present in every page, its contents adapt to the current phase of the game. It cycles through boat placement and shooting phases, informing the players on what to do next. Contents are fully controlled through JavaScript.
 
+![Menu1](/documentation/menu-play.jpg)
+![Menu2](/documentation/menu-place-boat.jpg)
+![Menu3](/documentation/menu-player1-place-boat.jpg)
+![Menu4](/documentation/menu-player1-boats-placed.jpg)
+![Menu5](/documentation/menu-player2-place-boat.jpg)
+![Menu6](/documentation/menu-player2-ready.jpg)
+![Menu7](/documentation/menu-allplayers-boats-placed.jpg)
+![Menu8](/documentation/menu-player1-ready.jpg)
+![Menu9](/documentation/menu-player1-shoot.jpg)
+![Menu10](/documentation/menu-player2-ready.jpg)
+![menu11](/documentation/menu-player2-shoot.jpg)
+
 - __Game area__
 
 -	Contains the “map” where players place their boats and choose where to shoot. Also contains general rules at start of the game. Contents are fully controlled through JavaScript.
+
+![Game area rules](/documentation/game-area-rules.jpg)
+![Game area map](/documentation/game-area-map.jpg)
 
 - __Alerts__
 
@@ -90,9 +107,12 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
   - Buttons: created and activated through JavaScript, colour change to indicate accessibility.
 
-  - Responsiveness: Game grid and content adapts to screen size to maintain ratios.
+  - Responsiveness: 
+    - Game grid and content adapts to screen size to maintain ratios.
 
   ![Responsiveness](/documentation/responsiveness.jpg)
+
+    -
 
   - Use of Grid to improve adaptability and html generation through JavaScript
   ```css
