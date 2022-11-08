@@ -44,10 +44,10 @@ The battleship website is intended to showcase JavaScript through the classic ga
   - __Player shoots__
 
     Player selects a cell to shoot at. Player is informed if:
-      - Cell previously shot.
-      - Not right amount of cells (1) selected.
-      - Boat hit.
-      - Miss.
+      - Cell previously shot, goes back to selecting a cell to shoot.
+      - Not right amount of cells (1) selected, goes back to selecting a cell to shoot.
+      - Boat hit, moves back to battle phase.
+      - Miss, moves back to battle phase.
     Player's own half of the map is revealed, only opponent's half is clickable
 
     ![Cell selected](/documentation/shooting-phase-cell-selected.jpg)
@@ -209,6 +209,29 @@ The battleship website is intended to showcase JavaScript through the classic ga
 -  Improve boat graphics.
 
 ## Testing
+
+### Troubleshooting
+
+- __Placement phase__
+
+  Boat placement has to be checked in a number of ways:
+    - All cells composing the boat need to be in the same line or column
+    - There can be no empty cells within a boat
+    - Only the correct amount of cells can be selected - issues encountered where once correct boat found anything was confirmed.
+  ![Boat placement issue](/documentation/boat-placement-bug.jpg)
+
+- __Shooting phase__
+
+  Shots need to be checked for:
+    - Multiple shots made
+    - Shooting a cell that has previsouly been shot
+    - Hit or miss
+
+- __Event listeners__
+
+  Issues encountered where event listeners where stacking and deploying at incorrect times.
+![Event listener 1](/documentation/stacking-event-listeners-screenshot.jpg)
+![Event listener 2](/documentation/stacking-event-listeners-screenshot2.jpg)
 
 ### Browser compatibility
 
