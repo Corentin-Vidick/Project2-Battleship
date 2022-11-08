@@ -112,7 +112,13 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
   ![Responsiveness](/documentation/responsiveness.jpg)
 
-    -
+    - Website responsive to all devices with a screensize over 320px.
+
+  ![MobileS](/documentation/responsiveness-320px.jpg)
+  ![MobileL](/documentation/responsiveness-mobileL.jpg)
+  ![Tablet](/documentation/responsiveness-tablet.jpg)
+  ![Laptop1024](/documentation/responsiveness-laptop1024.jpg)
+  ![Laptop4K](/documentation/responsiveness-laptop4K.jpg)
 
   - Use of Grid to improve adaptability and html generation through JavaScript
   ```css
