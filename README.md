@@ -223,5 +223,8 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 ## Credits 
 
 - The font on the website was taken from [Google Fonts](https://fonts.google.com/)
-
+- The Favicon was taken from [Favicon](https://favicon.io/emoji-favicons/)
+- Grid understanding done through [W3Schools](https://www.w3schools.com/css/css_grid.asp)
+- Switch case understanding through [W3Schools](https://www.w3schools.com/js/js_switch.asp)
+- Modal understanding through [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp)
 - All images and text are property of the developer, Corentin Vidick
