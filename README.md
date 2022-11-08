@@ -2,22 +2,74 @@
 
 The battleship website is intended to showcase JavaScript through the classic game of battleships. It is a two-player game. Each player places two boats on their half of the “map”. Once boats are placed, the players take turns at shooting blindly trying to hit the other player’s boats. The game ends when all of a player’s boats are destroyed.
 
-### Important information
+## Important information
 
-- This project was started on October the 13th 2022 in the [GitHub repository](https://github.com/Corentin-Vidick/bataille-navale). All code was developed by myself from scratch, but I realised commits were not up to standard. I decided to create a new repository using the same code in order for my commits to meet requirements. All commits very recent for that reason.
+  This project was started on October the 13th 2022 in the [GitHub repository](https://github.com/Corentin-Vidick/bataille-navale). All code was developed by myself from scratch, but I realised commits were not up to standard. I decided to create a new repository using the same code in order for my commits to meet requirements. All commits very recent for that reason.
+
+## Features
+
+### How the game works
+
+- __I - Starting page__
+
+  The rules are displayed for players to read. One button to click, "Play"
+
+  ![Menu](/documentation/menu-page.jpg)
+
+- __II - Boat placement phase__
+
+  Select a player to place boats, "Ready" button will prompt players to place their boats if any of the players haven't placed their boats.
+  The whole map is fogged to hide all boats placed, none of the map is clickable.
+
+  ![General boat placement](/documentation/all-boats-placed.jpg)
+
+  - __Player places boats__
+
+    Player selects two cells to place a boat, confirms it and is informed if:
+      - Placement is correct, player repeats to place second boat.
+      - Placement is incorrect (wrong amount of cells, not in same row or column, not consecutive cells).
+    Only the current player's half of the map is visible and clickable.
+
+    ![Player boat placement](/documentation/boat-placement-page.jpg)
+
+- __III - Battle phase__
+
+  Player is prompted to be ready to fire.
+  The whole map is fogged, none of it is clickable.
+  Map displays previous shots, white for misses and red for hits.
+  Each player takes turns shooting until one player runs out of lifes.
+
+  ![Battle phase](/documentation/shooting-phase-in-between-players.jpg)
+
+  - __Player shoots__
+
+    Player selects a cell to shoot at. Player is informed if:
+      - Cell previously shot.
+      - Not right amount of cells (1) selected.
+      - Boat hit.
+      - Miss.
+    Player's own half of the map is revealed, only opponent's half is clickable
+
+    ![Cell selected](/documentation/shooting-phase-cell-selected.jpg)
+
+- __IV - End of game__
+
+  Winner is displayed and game returns to starting page.
+
+  ![End game](/documentation/modal-player1-wins.jpg)
 
 
 ### Existing Features
 
 - __The title, tab name and icon__
   
--	Repeated on every page, helps locate the correct page if many are open.
+  Repeated on every page, helps locate the correct page if many are open.
 
 ![Tab and title](/documentation/title-and-tab.jpg)
 
 - __Menu area__
 
--	Present in every page, its contents adapt to the current phase of the game. It cycles through boat placement and shooting phases, informing the players on what to do next. Contents are fully controlled through JavaScript.
+  Present in every page, its contents adapt to the current phase of the game. It cycles through boat placement and shooting phases, informing the players on what to do next. Contents are fully controlled through JavaScript.
 
 ![Menu1](/documentation/menu-play.jpg)
 ![Menu2](/documentation/menu-place-boat.jpg)
@@ -33,14 +85,14 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 - __Game area__
 
--	Contains the “map” where players place their boats and choose where to shoot. Also contains general rules at start of the game. Contents are fully controlled through JavaScript.
+  Contains the “map” where players place their boats and choose where to shoot. Also contains general rules at start of the game. Contents are fully controlled through JavaScript.
 
 ![Game area rules](/documentation/game-area-rules.jpg)
 ![Game area map](/documentation/game-area-map.jpg)
 
 - __Alerts__
 
--	Modals are used to inform player about placement errors, results of shooting and who wins at the end of the game.
+  Modals are used to inform player about placement errors, results of shooting and who wins at the end of the game.
 
 ![Modal - boat placed](/documentation/modal-boat-placed.jpg)
 
@@ -58,31 +110,31 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 - __Menu page__
 
--	Displays rules of game and lets players decide when to start a new game.
+  Displays rules of game and lets players decide when to start a new game.
 
 ![Menu](/documentation/menu-page.jpg)
 
 - __General boat placement page__
 
--	Gives each player the option to place their boats. Buttons change colour once boats are placed. One button to move onto next phase, only activates if both players have placed their boats correctly.
+  Gives each player the option to place their boats. Buttons change colour once boats are placed. One button to move onto next phase, only activates if both players have placed their boats correctly.
 
 ![General boat placement](/documentation/all-boats-placed.jpg)
 
 - __Player boat placement page__
 
--	Indicates which boat the player is placing, checks and confirms or denies the boat placement. If placement is wrong, player can try again until correct. Once both boats are placed and accepted, goes back to General boat placement page.
+  Indicates which boat the player is placing, checks and confirms or denies the boat placement. If placement is wrong, player can try again until correct. Once both boats are placed and accepted, goes back to General boat placement page.
 
 ![Player boat placement](/documentation/boat-placement-page.jpg)
 
 - __Battle phase page__
 
--	Lets each player shoot one by one. Notifies which player is going to shoot before revealing corresponding map. Turns alternate until one player destroys all opponent's boats. Winner is displayed and game returns to first page.
+  Lets each player shoot one by one. Notifies which player is going to shoot before revealing corresponding map. Turns alternate until one player destroys all opponent's boats. Winner is displayed and game returns to first page.
 
 ![Battle phase](/documentation/shooting-phase-in-between-players.jpg)
 
 - __Shooting page__
 
--	Player can see their own half of map and select one cell on other player's half to shoot. Informs player of hit or miss and switches to next player's battle phase page.
+  Player can see their own half of map and select one cell on other player's half to shoot. Informs player of hit or miss and switches to next player's battle phase page.
 
 ![Cell higlight](/documentation/shooting-phase-cell-highlight.jpg)
 
@@ -90,47 +142,16 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
 - __End of game__
 
-  -	Once one player's boats are destroyed, the winner is announced and game goes back to main page.
+  Once one player's boats are destroyed, the winner is announced and game goes back to main page.
 
 ![End game](/documentation/modal-player1-wins.jpg)
 
-### Features Left to Implement
+- __Buttons__
+  Created and activated through JavaScript, colour change to indicate accessibility.
+![Buttons](/documentation/menu-allplayers-boats-placed.jpg)
 
-  -  Possibility to play against computer. Random boat placement and shot selection. 
-  -  Differentiate boats to notify player if boat hit and/or full boat destroyed.
-  -  Improve UI to display shots taken, boats damaged/remaining…
-  -  Improve boat graphics.
-
-## Testing
-
-### Browser compatibility
-
-- Website compatible with various browsers.
-  
-  ![Firefox](/documentation/test-browser-mozilla.jpg)
-  ![Chrome](/documentation/test-browser-chrome.jpg)
-  ![Edge](/documentation/test-browser-microsoftedge.jpg)
-
-
-### Responsiveness
-
-- Game grid and content adapts to screen size to maintain ratios.
-
-  ![Responsiveness](/documentation/responsiveness.jpg)
-
-- Website responsive to all devices with a screensize over 320px.
-
-  ![MobileS](/documentation/responsiveness-320px.jpg)
-  ![MobileL](/documentation/responsiveness-mobileL.jpg)
-  ![Tablet](/documentation/responsiveness-tablet.jpg)
-  ![Laptop1024](/documentation/responsiveness-laptop1024.jpg)
-  ![Laptop4K](/documentation/responsiveness-laptop4K.jpg)
-
-### Features
-
-  - Buttons: created and activated through JavaScript, colour change to indicate accessibility.
-
-  - Use of Grid to improve adaptability and html generation through JavaScript
+- __Grid__
+  Improve adaptability and html generation through JavaScript
   ```css
   #game-container {
     margin: auto;
@@ -180,32 +201,64 @@ The battleship website is intended to showcase JavaScript through the classic ga
   }
   ```
 
+### Features Left to Implement
+
+-  Possibility to play against computer. Random boat placement and shot selection. 
+-  Differentiate boats to notify player if boat hit and/or full boat destroyed.
+-  Improve UI to display shots taken, boats damaged/remaining…
+-  Improve boat graphics.
+
+## Testing
+
+### Browser compatibility
+
+Website compatible with various browsers.
+  
+  ![Firefox](/documentation/test-browser-mozilla.jpg)
+  ![Chrome](/documentation/test-browser-chrome.jpg)
+  ![Edge](/documentation/test-browser-microsoftedge.jpg)
+
+
+### Responsiveness
+
+- Game grid and content adapts to screen size to maintain ratios.
+
+  ![Responsiveness](/documentation/responsiveness.jpg)
+
+- Website responsive to all devices with a screensize over 320px.
+
+  ![MobileS](/documentation/responsiveness-320px.jpg)
+  ![MobileL](/documentation/responsiveness-mobileL.jpg)
+  ![Tablet](/documentation/responsiveness-tablet.jpg)
+  ![Laptop1024](/documentation/responsiveness-laptop1024.jpg)
+  ![Laptop4K](/documentation/responsiveness-laptop4K.jpg)
+
 ### Tools and technologies used
 
-  - A number of tools were used for this project:
-    - Programming - HTML, CSS and JavaScript
-    - Software - GitHub, GitPod, GitHub issues
-  ![GitHub issues](/documentation/github-issues.jpg)
-    - Validators - W3C, Jigsaw, JSHint and Lighthouse
+A number of tools were used for this project:
+  - Programming - HTML, CSS and JavaScript
+  - Software - GitHub, GitPod, GitHub issues
+![GitHub issues](/documentation/github-issues.jpg)
+  - Validators - W3C, Jigsaw, JSHint and Lighthouse
 
 ### Validation
 
-  - HTML
-    - No errors were returned when passing through the official ![W3C validator Main](/documentation/validation-html.jpg)
+- HTML
+  No errors were returned when passing through the official ![W3C validator Main](/documentation/validation-html.jpg)
 
-  - CSS
-    - No errors were found when passing through the official ![Jigsaw validator](/documentation/validation-css.jpg)
+- CSS
+  No errors were found when passing through the official ![Jigsaw validator](/documentation/validation-css.jpg)
 
-  - Javascript
-    - No errors were found when passing through the official ![JSHint validator](/documentation/validation-javascript.jpg)
+- Javascript
+  No errors were found when passing through the official ![JSHint validator](/documentation/validation-javascript.jpg)
 
-  - Lighthouse
-    - All Lighthouse tests > 90% ![Lighthouse](/documentation/validation-lighthouse.jpg)
+- Lighthouse
+  All Lighthouse tests > 90% ![Lighthouse](/documentation/validation-lighthouse.jpg)
 
 ### Unfixed bugs
 
-  -  Bugs and issues logged in GitHub issues - all issues fixed during build.
-  -  For screen sizes smaller than 320px the game container size fails due to padding.
+-  Bugs and issues logged in GitHub issues - all issues fixed during build.
+-  For screen sizes smaller than 320px the game container size fails due to padding.
 
 
 ## Deployment
@@ -238,4 +291,4 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 
 - Intelecutal property
   - All images and text are property of the developer, Corentin Vidick
-  - GitPod repository can be found at [Repository](https://github.com/Corentin-Vidick/Project2-Battleship) solely developed by Corentin Vidick from 06/11/2022 based on [Initial repository](https://github.com/Corentin-Vidick/bataille-navale) solely developed by Corentin Vidick from 13/12/2022.
+  - GitPod repository can be found at [Battleship repository](https://github.com/Corentin-Vidick/Project2-Battleship) solely developed by Corentin Vidick from 06/11/2022 based on the [Initial repository](https://github.com/Corentin-Vidick/bataille-navale) solely developed by Corentin Vidick from 13/12/2022.
