@@ -180,6 +180,14 @@ The battleship website is intended to showcase JavaScript through the classic ga
   }
   ```
 
+### Tools and technologies used
+
+  - A number of tools were used for this project:
+    - Programming - HTML, CSS and JavaScript
+    - Software - GitHub, GitPod, GitHub issues
+  ![GitHub issues](/documentation/github-issues.jpg)
+    - Validators - W3C, Jigsaw, JSHint and Lighthouse
+
 ### Validation
 
   - HTML
