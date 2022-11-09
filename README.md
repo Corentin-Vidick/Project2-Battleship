@@ -27,7 +27,7 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
     Player selects two cells to place a boat, confirms it and is informed if:
       - Placement is correct, player repeats to place second boat.
-      - Placement is incorrect (wrong amount of cells, not in same row or column, not consecutive cells).
+      - Placement is incorrect (wrong number of cells, not in same row or column, not consecutive cells).
     Only the current player's half of the map is visible and clickable.
 
     ![Player boat placement](/documentation/boat-placement-page.jpg)
@@ -45,7 +45,7 @@ The battleship website is intended to showcase JavaScript through the classic ga
 
     Player selects a cell to shoot at. Player is informed if:
       - Cell previously shot, goes back to selecting a cell to shoot.
-      - Not right amount of cells (1) selected, goes back to selecting a cell to shoot.
+      - Not right number of cells (1) selected, goes back to selecting a cell to shoot.
       - Boat hit, moves back to battle phase.
       - Miss, moves back to battle phase.
     Player's own half of the map is revealed, only opponent's half is clickable
@@ -217,14 +217,14 @@ The battleship website is intended to showcase JavaScript through the classic ga
   Boat placement has to be checked in a number of ways:
     - All cells composing the boat need to be in the same line or column
     - There can be no empty cells within a boat
-    - Only the correct amount of cells can be selected - issues encountered where once correct boat found anything was confirmed.
+    - Only the correct number of cells can be selected - issues encountered where once correct boat found anything was confirmed.
   ![Boat placement issue](/documentation/boat-placement-bug.jpg)
 
 - __Shooting phase__
 
   Shots need to be checked for:
     - Multiple shots made
-    - Shooting a cell that has previsouly been shot
+    - Shooting a cell that has previously been shot
     - Hit or miss
 
 - __Event listeners__
@@ -244,11 +244,11 @@ Website compatible with various browsers.
 
 ### Responsiveness
 
-- Game grid and content adapts to screen size to maintain ratios.
+- Game grid and content adapt to screen size to maintain ratios.
 
   ![Responsiveness](/documentation/responsiveness.jpg)
 
-- Website responsive to all devices with a screensize over 320px.
+- Website responsive to all devices with a screen size over 320px.
 
   ![MobileS](/documentation/responsiveness-320px.jpg)
   ![MobileL](/documentation/responsiveness-mobileL.jpg)
@@ -312,6 +312,6 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 - Switch case understanding through [W3Schools](https://www.w3schools.com/js/js_switch.asp)
 - Modal understanding through [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp)
 
-- Intelecutal property
+- Intellectual property
   - All images and text are property of the developer, Corentin Vidick
   - GitPod repository can be found at [Battleship repository](https://github.com/Corentin-Vidick/Project2-Battleship) solely developed by Corentin Vidick from 06/11/2022 based on the [Initial repository](https://github.com/Corentin-Vidick/bataille-navale) solely developed by Corentin Vidick from 13/12/2022.
